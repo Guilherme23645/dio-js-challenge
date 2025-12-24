@@ -1,23 +1,20 @@
-let nome = "Roberto"
-let xp = 5000;
-let nivel;
-
-if (xp <= 1000) {
-    nivel = "Prata";
-} else if (xp <= 2000) {
-    nivel = "Bronze";
-} else if (xp <= 5000) {
-    nivel = "Prata";
-} else if (xp <= 7000) {
-    nivel = "Ouro";
-} else if (xp <= 8000) {
-    nivel = "Platina";
-} else if (xp <= 9000) {
-    nivel = "Ascendente";
-} else if (xp <= 10000) {
-    nivel = "Imortal";
-} else {
-    nivel = "Radiante";
+class Heroi {
+    constructor (nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+    
+    atacar() {
+        switch (this.tipo) {
+            case "mago": console.log("mago atacou usando magia"); break;
+            case "guerreiro": console.log("guerreiro atacou usando espada"); break;
+            case "monge": console.log("monge atacou usando artes marciais"); break;
+            case "ninja": console.log("ninja atacou usando shuriken"); break;
+            default: console.log("tipo invalido");
+        }
+    }
 }
 
-console.log(`O herói de nome ${nome} é de nível ${nivel}!`);
+const heroi = new Heroi("Roberto", 19, "mago");
+heroi.atacar();
