@@ -1,23 +1,29 @@
-let nome = "Roberto"
-let xp = 5000;
-let nivel;
-
-if (xp <= 1000) {
-    nivel = "Prata";
-} else if (xp <= 2000) {
-    nivel = "Bronze";
-} else if (xp <= 5000) {
-    nivel = "Prata";
-} else if (xp <= 7000) {
-    nivel = "Ouro";
-} else if (xp <= 8000) {
-    nivel = "Platina";
-} else if (xp <= 9000) {
-    nivel = "Ascendente";
-} else if (xp <= 10000) {
-    nivel = "Imortal";
-} else {
-    nivel = "Radiante";
+function calcularSaldo(vitorias, derrotas) {
+    let saldo = vitorias - derrotas;
+    return saldo;
 }
 
-console.log(`O herói de nome ${nome} é de nível ${nivel}!`);
+function calcularNivel(saldo) {
+    if (saldo <= 10) {
+        return "Ferro";
+    } else if (saldo <= 20) {
+        return "Bronze";
+    } else if (saldo <= 50) {
+        return "Prata";
+    } else if (saldo <= 80) {
+        return "Ouro";
+    } else if (saldo <= 90) {
+        return "Diamante";
+    } else if (saldo <= 100) {
+        return "Lendário";
+    } else {
+        return "Imortal";
+    }
+}
+
+let vitorias = 60;
+let derrotas = 20;
+saldo = calcularSaldo(vitorias, derrotas);
+nivel = calcularNivel(saldo);
+
+console.log(`O Herói tem de saldo de vitorias ${saldo} e está no nível ${nivel}`);
